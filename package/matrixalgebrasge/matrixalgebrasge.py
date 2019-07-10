@@ -89,3 +89,46 @@ class MatrixA():
                 result.data_matrix[i][j]=self.data_matrix[i][j]+other.data_matrix[i][j]
             
         return result
+    
+    def __sub__(self, other):
+        """Magic method to subtract matrix B from matrix A
+        
+        Args:
+            other (MatrixA): Matrix instance
+            
+        Returns:
+            MatrixA: Matrix 
+        
+        """
+        
+        result=MatrixA(self.nrow,self.ncol)
+        
+        
+        for i in range(self.nrow):
+            for j in range(self.ncol):
+                result.data_matrix[i][j]=self.data_matrix[i][j]-other.data_matrix[i][j]
+            
+        return result
+    
+    def __mul__(self, other):
+        """Magic method to multiply matrix A and matrix B
+        
+           the col number A should be equal to the row number B
+        
+        Args:
+            other (MatrixA): Matrix instance
+            
+        Returns:
+            MatrixA: Matrix 
+        
+        """
+        
+        result=MatrixA(self.nrow,other.ncol)
+        
+        
+        for i in range(self.nrow):
+            for j in range(other.ncol):
+                for k in range(self.ncol):
+                    result.data_matrix[i][j]+=self.data_matrix[i][k]*other.data_matrix[k][j]
+            
+        return result
