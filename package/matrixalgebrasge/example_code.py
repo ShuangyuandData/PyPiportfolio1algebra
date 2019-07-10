@@ -16,3 +16,11 @@ Ma2.print_matrix()
 print('--------------')
 Ma3=Ma1 + Ma2
 Ma3.print_matrix()
+
+print('--------------')
+Ma4=Ma1 - Ma2
+Ma4.print_matrix()
+
+print('--------------')
+Ma5=Ma1 * Ma2
+Ma5.print_matrix()
