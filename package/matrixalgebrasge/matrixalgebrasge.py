@@ -89,3 +89,23 @@ class MatrixA():
                 result.data_matrix[i][j]=self.data_matrix[i][j]+other.data_matrix[i][j]
             
         return result
+    
+    def __sub__(self, other):
+        """Magic method to subtract together two matrix
+        
+        Args:
+            other (MatrixA): Matrix instance
+            
+        Returns:
+            MatrixA: Matrix 
+        
+        """
+        
+        result=MatrixA(self.nrow,self.ncol)
+        
+        
+        for i in range(self.nrow):
+            for j in range(self.ncol):
+                result.data_matrix[i][j]=self.data_matrix[i][j]-other.data_matrix[i][j]
+            
+        return result
