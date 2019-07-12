@@ -11,4 +11,6 @@ setup(name='matrixalgebrasge',
       version='0.1',
       description='basic matrix algebra',
       packages=['matrixalgebrasge'],
+      author= 'Shuangyu Ge',
+      author_email='pangpeigsy@gmail.com',
       zip_safe=False)
