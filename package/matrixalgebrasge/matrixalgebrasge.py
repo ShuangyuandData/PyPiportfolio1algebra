@@ -80,15 +80,23 @@ class MatrixA():
             MatrixA: Matrix 
         
         """
-        
-        result=MatrixA(self.nrow,self.ncol)
-        
-        
-        for i in range(self.nrow):
-            for j in range(self.ncol):
-                result.data_matrix[i][j]=self.data_matrix[i][j]+other.data_matrix[i][j]
+        if self.nrow == other.nrow and self.ncol == other.ncol: 
             
-        return result
+            result=MatrixA(self.nrow,self.ncol)
+            
+            for i in range(self.nrow):
+                for j in range(self.ncol):
+                    result.data_matrix[i][j]=self.data_matrix[i][j]+other.data_matrix[i][j]
+                    
+            return result
+        
+        else:
+            print('the numbers of rows or columns are not equal')
+            
+            return None
+        
+
+    
     
     def __sub__(self, other):
         """Magic method to subtract matrix B from matrix A
@@ -100,15 +108,23 @@ class MatrixA():
             MatrixA: Matrix 
         
         """
+
+        if self.nrow == other.nrow and self.ncol == other.ncol: 
         
-        result=MatrixA(self.nrow,self.ncol)
+            result=MatrixA(self.nrow,self.ncol)
         
         
-        for i in range(self.nrow):
-            for j in range(self.ncol):
-                result.data_matrix[i][j]=self.data_matrix[i][j]-other.data_matrix[i][j]
+            for i in range(self.nrow):
+                for j in range(self.ncol):
+                    result.data_matrix[i][j]=self.data_matrix[i][j]-other.data_matrix[i][j]
             
-        return result
+                return result
+        else:
+            
+            print('the numbers of rows or columns are not equal')
+            
+            return None
+            
     
     def __mul__(self, other):
         """Magic method to multiply matrix A and matrix B
@@ -123,12 +139,19 @@ class MatrixA():
         
         """
         
-        result=MatrixA(self.nrow,other.ncol)
+        if self.ncol == other.nrow: 
+        
+            result=MatrixA(self.nrow,other.ncol)
         
         
-        for i in range(self.nrow):
-            for j in range(other.ncol):
-                for k in range(self.ncol):
-                    result.data_matrix[i][j]+=self.data_matrix[i][k]*other.data_matrix[k][j]
+            for i in range(self.nrow):
+                for j in range(other.ncol):
+                    for k in range(self.ncol):
+                        result.data_matrix[i][j]+=self.data_matrix[i][k]*other.data_matrix[k][j]
             
-        return result
+            return result
+        else:
+            
+            print('the numbers of rows in Matrix A is not equal with the numbers of columns in Matrix B')
+            
+            return None
