@@ -6,16 +6,16 @@ Motivation:
 a package that does basic matrix algebra such as addition, subtraction, multiplication, matrix inversion, etc.
 
 Description of files:
-Main code file: 
+1. Main code file: 
   matrixalgebrasge.py
-Example files:
+2. Example files:
   example_code.py
   Matrix1.ipynb
   M1.txt
   M2.txt
   M3.txt
   M4.txt
-Installation files:
+3. Installation files:
   __init__.py
   setup.cfg
   setup.py
